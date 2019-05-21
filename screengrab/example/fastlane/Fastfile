@@ -20,6 +20,18 @@ platform(:android) do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
   end
 
+  desc("builds for screengrab")
+  lane :build_for_screengrab do
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+  end
+  
   desc("Runs all the tests")
   lane(:test) do
     gradle(task: "test")
