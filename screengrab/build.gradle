@@ -3,7 +3,7 @@ apply plugin: 'com.github.ben-manes.versions'
 buildscript {
     repositories {
         mavenCentral()
-        gradlePluginPortal()
+        jcenter()
         google()
     }
     dependencies {
